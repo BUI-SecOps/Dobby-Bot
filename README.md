@@ -1,4 +1,4 @@
-# Ollie
+# Dobby (forked from Ollie)
 
 ## Deployment Guide
 
@@ -10,7 +10,7 @@ To begin we will need:
   - App Service
   - App Service Plan
   - Bot channels registration
-- A Copy of the Ollie github repo
+- A Copy of the Dobby github repo
 
 ### Register Azure AD application
 
@@ -19,7 +19,7 @@ Register two Azure AD Applications in your tenant's directory.
 1. Log in to the Azure Portal for your subscription, and go to “App registrations”. You can use the following link: https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps
 2. Click on "New registration", and create an Azure AD application.
 
-   1. **Name**: The name of your Teams app - if you are following the template for a default deployment, we recommend "Ollie".
+   1. **Name**: The name of your Teams app - if you are following the template for a default deployment, we recommend "Dobby".
 ![image](https://user-images.githubusercontent.com/83395176/135573524-3964d067-4a61-4871-bb6b-0754f9238320.png)
    2. **Supported account types**: Select "Accounts in any organizational directory"
 ![image](https://user-images.githubusercontent.com/83395176/135573558-cf28ed43-a650-48b5-a34f-c63c5ed11749.png)
@@ -31,7 +31,7 @@ Register two Azure AD Applications in your tenant's directory.
 6. When the secret is generated, copy the value and keep it safe. We will need it later.
 7. Go back to “App registrations”, then repeat steps 2-6 to create another Azure AD application for the configuration app.
 
-   1. Name: The name of the app config that can connect to the Log Analytics API and the Graph API, for example, “Ollie Configuration”.
+   1. Name: The name of the app config that can connect to the Log Analytics API and the Graph API, for example, “Dobby Configuration”.
    2. Supported account types: Select "Account in this organizational directory only"
    3. Leave the "Redirect URI" field blank for now.   
 8. Add Api Permissions to Configuration app
@@ -60,7 +60,7 @@ Register two Azure AD Applications in your tenant's directory.
 
 1. Click on the **Deploy to Azure** button, this will help you deploy all the needed resources.
 
-   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fthecollectiveconsulting%2FOlliebot%2Fmain%2FARMTemplates%2FazureDeploy.json)
+   [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fthecollectiveconsulting%2FDobbybot%2Fmain%2FARMTemplates%2FazureDeploy.json)
 
 2. Select a subscription and resource group, we recommend creating a new resource group.
 3. Fill in the required fields:
@@ -81,7 +81,7 @@ Register two Azure AD Applications in your tenant's directory.
 Now that we've created all the necessary resources, it's time to deploy the bot. The following steps describe what to do.
 
 1. Start by downloading this repository.
-2. Navigate to the **appsettings.json** file, which can be found in Solution/Ollie
+2. Navigate to the **appsettings.json** file, which can be found in Solution/Dobby
 3. Fill in all the required information.
 
    - **MicrosoftAppId**: The application (client) ID of the first app registration that you created before
@@ -94,7 +94,7 @@ Now that we've created all the necessary resources, it's time to deploy the bot.
    - **ResourcegroupName**: Resourcegroupname of where de Azure sentinel workspace is located.
    - **WorkspaceName**: Name of the Azure Sentinel workspace
 
-5. Next navigate to the **manifest.json** file, which can be found in Solution/Ollie/Manifest
+5. Next navigate to the **manifest.json** file, which can be found in Solution/Dobby/Manifest
 6. Fill in the id parameter.
 7. Deploy the bot to the **App Service** we've previously created.
 
@@ -102,13 +102,13 @@ To deploy the bot you can use Visualstudio or follow the instruction from the [d
 
 ### Create the Teams app package
 
-You have to create a single Teams app package in order to add Ollie to Teams.
+You have to create a single Teams app package in order to add Dobby to Teams.
 
 1. Open the Manifest\manifest.json file in a text editor.
 2. Change the <MicrosoftAppId> placeholder to your Azure AD application's ID from above. This is the same GUID that you entered in the template under "Msa App Id".
 3. Create a ZIP package with the manifest.json,color.png, and outline.png. Make sure there are no nested folders inside the ZIP Package.
 
 
-### Add Ollie to teams
+### Add Dobby to teams
 
 Follow these [instruction](https://docs.microsoft.com/en-us/MicrosoftTeams/manage-apps?toc=%2Fmicrosoftteams%2Fplatform%2Ftoc.json&bc=%2Fmicrosoftteams%2Fplatform%2Fbreadcrumb%2Ftoc.json#upload-an-app-package)
