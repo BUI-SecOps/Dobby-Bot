@@ -3,15 +3,15 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "serviceplanName": {
-            "defaultValue": "OlliePlan",
+            "defaultValue": "DobbyPlan",
             "type": "string"
         },
         "keyVaultName": {
-            "defaultValue": "Ollie-kv",
+            "defaultValue": "Dobby-kv",
             "type": "string"
         },
         "botName": {
-            "defaultValue": "Ollie-Bot",
+            "defaultValue": "Dobby-Bot",
             "type": "string"
         },
         "msaAppId": {
@@ -109,8 +109,8 @@
                 {
                     "type": "Microsoft.KeyVault/vaults/secrets",
                     "apiVersion": "2021-06-01-preview",
-                    // "name": "bot-secrets-iqpf43/bot-tc-test-Ollie-pwd-ftudbv",
-                    "name": "[concat(parameters('keyVaultName'), '/Ollie-pwd')]",
+                    // "name": "bot-secrets-iqpf43/bot-tc-test-Dobby-pwd-ftudbv",
+                    "name": "[concat(parameters('keyVaultName'), '/Dobby-pwd')]",
                     "location": "[resourceGroup().location]",
                     "dependsOn": [
                         "[resourceId('Microsoft.KeyVault/vaults', parameters('keyVaultName'))]"
