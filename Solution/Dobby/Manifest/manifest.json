@@ -1,0 +1,42 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.5",
+  "version": "1.0.0",
+  "id": "<MicrosoftAppId>",
+  "packageName": "com.thecollective.Dobby",
+  "developer": {
+    "name": "Hogwarts",
+    "websiteUrl": "https://thecollective.eu",
+    "privacyUrl": "https://thecollective.eu/privacy-policy/",
+    "termsOfUseUrl": "https://thecollective.eu/privacy-policy/"
+  },
+  "name": {
+    "short": "Dobby",
+    "full": "Dobby, your personal Microsoft Sentinel Assistant"
+  },
+  "description": {
+    "short": "Dobby, your personal Microsoft Sentinel assistant! By using Dobby, you manage your Microsoft Sentinel environment from the comfort of a Teams client. Use Dobby to easily interact with Microsoft Sentinel without having to navigate to a different portal",
+    "full": "Dobby, your personal Microsoft Sentinel assistant! Dobby is a Teams bot which allows you to interact with Microsoft Sentinel and execute tasks from within your Teams client. Dobby will help you to add new Threat Intelligence Indicators and configure watchlists without having to navigate to the Microsoft Sentinel portal. This cuts the time it takes to add new configurations significantly, allowing you to spend more time on the wizardry that matters."
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#ED692B",
+  "staticTabs": [],
+  "configurableTabs": [],
+  "bots": [
+    {
+      "botId": "",
+      "needsChannelSelector": false,
+      "isNotificationOnly": false,
+      "scopes": [
+        "team",
+        "personal"
+      ]
+    }
+  ],
+  "composeExtensions": [],
+  "permissions": [],
+  "validDomains": []
+}
